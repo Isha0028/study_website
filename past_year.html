@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="past_year.css">
+    
+    <script src="https://kit.fontawesome.com/c86b43e879.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/c86b43e879.js" crossorigin="anonymous"></script>
+    <script>
+      function filterFunction() {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("Inputnav");
+        filter = input.value.toUpperCase();
+        div = document.getElementById("dropdown");
+        a = div.getElementsByTagName("a");
+        for (i = 0; i < a.length; i++) {
+          txtValue = a[i].textContent || a[i].innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+          } else {
+            a[i].style.display = "none";
+          }
+        }
+      }
+    </script>
+    <script>$('.item').click(function() {
+      $('.item.active').removeClass('active');
+      $(this).addClass('active');
+    });
+    </script>
+     <script>function loadSearchData() {
+      // Data to be used in the searchbar
+      let countries = [
+      { name: '2018-Advanced Algorithms (10M11CI211) T-2 April', link: "2018/Advanced Algorithms (10M11CI211) T-2 April, 2018 (Sem-8,2) B.Tech- M.Tech.pdf';" },
+          { name: '2018-Advanced Algorithms for Bioinformatics (10B11BI614) T-2 April', link: '2018/Advanced Algorithms for Bioinformatics (10B11BI614) T-2, April, 2018 (Sem-8) B. Tech. BT-BI.pdf;' },
+          { name: '2018-Analogue and Digital Communications T-2 April', link: '2018/Analogue and Digital Communications T-2 April, 2018 (Sem-4) B.Tech.pdf;' },
+          { name: '2018-Basic Data Structures (14B21CI211) T-2 April', link: '2018/Basic Data Structures (14B21CI211) T-2 April, 2018 (Sem-2) B.Tech.pdf;' },
+          { name: '2018-Bio-resources and Industrial Product (14B1WBI741) T-2 April', link: '2018/Bio-resources and Industrial Product (14B1WBI741) T-2 April, 2018 (Sem-8) B. Tech. & M. tech..pdf;' },
+          { name: '2018-Biophysical Techniques (10B11PH212) T-2 April', link: '2018/Biophysical Techniques (10B11PH212) T-2 April, 2018 (Sem-4) B.Tech.pdf;' },
+          { name: '2018-Chemistry (10B11CL211)  T-2 April', link: '2018/Chemistry (10B11CL211)  T-2 April, 2018 (Sem-2) B.Tech.pdf;' },
+          { name: '2018-Concrete Technology (11B11CE411) T-2 April', link: '2018/Concrete Technology (11B11CE411) T-2 April, 2018 (Sem-4) B.Tech.pdf;' },
+          { name: '2018-Construction Financial Management (10M11CE214) T-2 April', link: '2018/Construction Financial Management (10M11CE214) T-2 April, 2018 (Sem-4) M.Tech.pdf;' },
+          { name: '2018-Data Mining (10B22CI622) T-2 April', link: "2018/Data Mining (10B22CI622) T-2 April, 2018 (Sem-6) B.Tech.pdf;" },
+          { name: '2018-Discrete Mathematics (10B11MA211) T-2 April', link: '2018/Discrete Mathematics (10B11MA211) T-2 April, 2018 (Sem-2) B.Tech.pdf;' },
+          { name: '2018/ECE,CSE,IT (10B11EC211) T-2 April', link: '2018/ECE,CSE,IT (10B11EC211) T-2 April, 2018 (Sem-2) B.Tech.pdf;' },
+          { name: '2018/Financial Management (10B11PD411) T-2 April', link: '2018/Financial Management (10B11PD411) T-2 April, 2018 (Sem-4) B.Tech.pdf;' },
+          { name: '2018/Fundamentals of MIMO Systems (12M1WEC432) T-2 April', link: '2018/Fundamentals of MIMO Systems (12M1WEC432) T-2 April, 2018 (Sem-4) M.Tech.pdf;' },
+          { name: '2018/Linear Programming and Applications (11B1WMA832) T-2 April', link: '2018/Linear Programming and Applications (11B1WMA832) T-2 April, 2018 (Sem-8) B.Tech.pdf;' },
+          { name: '2018/Mobile and Distributed Computing (17B1WCI811) T-2 April', link: '2018/Mobile and Distributed Computing (17B1WCI811) T-2 April, 2018 (Sem-8) B.Tech.pdf;' },
+          { name: '2018/Physics-II (10B11PH211) T-2 April', link: '2018/Physics-II (10B11PH211) T-2 April, 2018 (Sem-2) B.Tech.pdf;' },
+          { name: '2018/Probability Theory and Randon Processes (10B11MA411) T-2 April', link: '2018/Probability Theory and Randon Processes (10B11MA411) T-2 April, 2018 (Sem-4) B.Tech .pdf;' },
+          { name: '2018/Strategic Management (11B1WPD832) T-2 April', link: "2018/Strategic Management (11B1WPD832) T-2 April, 2018 (Sem-8) B.Tech.pdf;" },
+          { name: '2019/Advanced Algorithms for Bioinformatics (10B11BI614) T-2 April', link: '2019/Advanced Algorithms for Bioinformatics (10B11BI614) T-2 April, 2019 (Sem-6) B. Tech.pdf;' },
+          { name: '2019/Advanced Software Engineering (10M11CI213) T-2 April', link: '2019/Advanced Software Engineering (10M11CI213) T-2 April, 2019 (B. Tech-Sem-8) (M. Tech-Sem-2).pdf;' },
+          { name: '2019/Basic Electrical Science (18B11EC212) T-2 April2019/Advanced Web Mining (11M1WCI431) T-2 April,', link: '2019/Advanced Web Mining (11M1WCI431) T-2 April, 2019 (Sem-4) M. Tech.pdf;' },
+          { name: '2019/Basic Electrical Science (18B11EC212) T-2 April', link: '2019/Basic Electrical Science (18B11EC212) T-2 April, 2019 (Sem-2) B. Tech(BT-BI).pdf;' },
+          { name: '2019/Basic Electronics (15B11EC411) T-2 April', link: '2019/Basic Electronics (15B11EC411) T-2 April, 2019 (Sem-4) B. Tech BT.pdf;' },
+          { name: '2019/Bridge Engineering (11M1WCE133) T-2 April', link: '2019/Bridge Engineering (11M1WCE133) T-2 April, 2019 (Sem-8) M. Tech & B. Tech.pdf;' },
+          { name: '2019/Computational Molecular Evolution (15B1WBI834) T-2 April', link: '2019/Computational Molecular Evolution (15B1WBI834) T-2 April, 2019 (Sem-8) B. Tech.pdf;' },
+          { name: '2019/Computer Organization (10B22CI421) T-2 April', link: '2019/Computer Organization (10B22CI421) T-2 April, 2019 (Sem-4) B. Tech.pdf;' },
+          { name: '2019/Concrete Technology (11B11CE411) T-2 April', link: "2019/Concrete Technology (11B11CE411) T-2 April, 2019 (Sem-4) B. Tech.pdf;" },
+          { name: '2019/Data Mining (10B22CI622) T-2 April', link: '2019/Data Mining (10B22CI622) T-2 April, 2019 (Sem-6) B. Tech, IT.pdf;' },
+          { name: '2019/Deep Learning (18B1WCI831) T-2 April', link: '2019/Deep Learning (18B1WCI831) T-2 April, 2019 (Sem-8) B. Tech CSE, IT.pdf;' },
+          { name: '2019/Financial Management (10B11PD411) T-2 April', link: '2019/Financial Management (10B11PD411) T-2 April, 2019 (Sem-4) B. Tech All Branches.pdf;' },
+          { name: '2019/Industrial Sociology (13B1WHS833) T-2 April', link: '2019/Industrial Sociology (13B1WHS833) T-2 April, 2019 (Sem-8) B. Tech All Branches.pdf;' },
+          { name: '2019/Linear Programming and Applications (11B1WMA832) T-2 April', link: '2019/Linear Programming and Applications (11B1WMA832) T-2 April, 2019 (Sem-8) B. Tech All Branches.pdf;' },
+          { name: '2019/Material Characterization (13P1WPH112) T-2 April', link: '2019/Material Characterization (13P1WPH112) T-2 April, 2019  Ph.D.pdf;' },
+          { name: '2019/Material Science (10B11PH611) T-2 April', link: '2019/Material Science (10B11PH611) T-2 April, 2019 (Sem-6) B. Tech (CSE, ECE, IT).pdf;' },
+          { name: '2019/Optical Fiber Networks (10B1WPH732) T-2 April', link: '2019/Optical Fiber Networks (10B1WPH732) T-2 April, 2019 B. Tech.pdf;' },
+          { name: '2019/Probability Theory and Random Process (10B11MA411) T-2 April', link: "2019/Probability Theory and Random Process (10B11MA411) T-2 April, 2019 (Sem-4) B. Tech (ECE-CSE-IT).pdf;" },
+          { name: '2020/Advance Computational Techniques (15M1WCI432) T-1 February', link: '2020/Advance Computational Techniques (15M1WCI432) T-1 February, 2020 (Sem-2) B.Tech.pdf;' },
+          { name: '2020/Advanced Algorithms (10M11CI211) T-1 February', link: '2020/Advanced Algorithms (10M11CI211) T-1 February, 2020 (Sem-2) M.Tech.pdf;' },
+          { name: '2020/Advanced Algorithms (10M11CI211) T-1 February', link: '2020/Advanced Algorithms (10M11CI211) T-1 February, 2020 (Sem-6-8) B.Tech.pdf;' },
+          { name: '2020/Analog Integrated Circuits (18B11EC411) T-1 February', link: '2020/Analog Integrated Circuits (18B11EC411) T-1 February, 2020 (Sem-4) B.Tech.pdf;' },
+          { name: '2020/Analogue and Digital Communication (17B11EC412) T-1 February', link: '2020/Analogue and Digital Communication (17B11EC412) T-1 February, 2020 (Sem-4) B.Tech.pdf;' },
+          { name: '2020/Applied Artificial Intelligence (18B1WEC533) T-1 February', link: '2020/Applied Artificial Intelligence (18B1WEC533) T-1 February, 2020 (Sem-6) B.Tech.pdf;' },
+          { name: '2020/Contemporary India in Globalized Era (18B1WHS831) T-1 February', link: '2020/Contemporary India in Globalized Era (18B1WHS831) T-1 February, 2020 (Sem-8) B.Tech.pdf;' },
+          { name: '2020/Data Mining (10B22CI622) T-1 February', link: '2020/Data Mining (10B22CI622) T-1 February, 2020 (Sem-6) B.Tech IT.pdf;' },
+          { name: '2020/Engineering Physics II (18B11PH211) T-1 February', link: "2020/Engineering Physics II (18B11PH211) T-1 February, 2020 (Sem-2) B.Tech.pdf;" },
+          { name: '2020/Financial and Accounting (18B11HS411) T-1 February', link: '2020/Financial and Accounting (18B11HS411) T-1 February, 2020 (Sem-4) B.Tech (All Branches).pdf;' },
+          { name: '2020/Financial Management (11B11PD411) T-1 February', link: '2020/Financial Management (11B11PD411) T-1 February, 2020 (Sem-4) B.Tech (All Branches).pdf;' },
+          { name: '2020/Materials Science (10B11PH611) T-1 February2020/Machine Learning (18B1WCI634) T-1 February', link: '2020/Machine Learning (18B1WCI634) T-1 February, 2020 (Sem-6) B.Tech (CSE-IT).pdf;' },
+          { name: '2020/Materials Science (10B11PH611) T-1 February', link: '2020/Materials Science (10B11PH611) T-1 February, 2020 (Sem-6) B.Tech.pdf;' },
+          { name: '2020/Mathematics-I (10B11MA111) T-1 February', link: '2020/Mathematics-I (10B11MA111) T-1 February, 2020 (Sem-1) B.Tech (backlog).pdf;' },
+          { name: '2020/Nano-Biotechnology (L-11B1WBT840) T-1 February', link: '2020/Nano-Biotechnology (L-11B1WBT840) T-1 February, 2020 (Sem-8) B.Tech.pdf;' },
+          { name: '2020/Plant Biotechnology (14I1WBT531) T-1 February', link: '2020/Plant Biotechnology (14I1WBT531) T-1 February, 2020 (Sem-8) B.Tech.pdf;' },
+          { name: '2020/Probability Theory and Random Processes (10B11MA411) T-1 Feb', link: '2020/Probability Theory and Random Processes (10B11MA411) T-1 Feb, 2020 (Sem-4)  B.Tech (ECE-CSE_IT).pdf;' },
+          { name: '2020/Quality Analysis and Management (14MIWBT334) T-1 February', link: "2020/Quality Analysis and Management (14MIWBT334) T-1 February, 2020 (Sem-2) Ph.D..pdf;" },
+          { name: '2020/Water Resource Engineering (18B11CE414) T-1 February', link: '2020/Water Resource Engineering (18B11CE414) T-1 February, 2020 (Sem-4) B.Tech.pdf;' },
+          { name: '2020/Water Supply Engineering (10B11CE514) T-1 February', link: '2020/Water Supply Engineering (10B11CE514) T-1 February, 2020 (Sem-5) B.Tech.pdf;' },
+          { name: '2021/Analog Integrated Circuits (18B11EC411) T-1 February', link: '2021/Analog Integrated Circuits (18B11EC411) T-1 February, 2023 (Sem-4) B.Tech..pdf;' },
+          { name: '2021/Applied Medical Signal Processing (19B1WEC836) T-1 February', link: '2021/Applied Medical Signal Processing (19B1WEC836) T-1 February, 2023 (Sem-8) B.Tech..pdf;' },
+          { name: '2021/Biosensors (21B1WPH831) T-1 February', link: '2021/Biosensors (21B1WPH831) T-1 February, 2023 (Sem-8) B.Tech..pdf;' },
+          { name: '2021/Data Analytics (18B1WCI843) T-1 February', link: '2021/Data Analytics (18B1WCI843) T-1 February, 2023 (Sem-8) B.Tech..pdf;' },
+          { name: '2021/Data Mining (18B11CI613) T-1 February', link: '2021/Data Mining (18B11CI613) T-1 February, 2023 (Sem-6) B.Tech..pdf;' },
+          { name: '2021/Data Mining and Data Warehousing (18B1WCI635) T-1 February', link: '2021/Data Mining and Data Warehousing (18B1WCI635) T-1 February, 2023 (Sem-6) B.Tech..pdf;' },
+          { name: '2021/Discrete Mathematics (18B11MA413) T-1 February', link: "2021/Discrete Mathematics (18B11MA413) T-1 February, 2023 (Sem-4) B.Tech..pdf;" },
+          { name: '2021/Molecular Biology (18B11BT412) T-1 February', link: '2021/Molecular Biology (18B11BT412) T-1 February, 2023 (Sem-4).pdf;' },
+          { name: '2021/Nano Biotechnology (18B1WBT633) T-1 February', link: '2021/Nano Biotechnology (18B1WBT633) T-1 February, 2023 (Sem-6).pdf;' },
+          { name: '2021/Nanotechnology (18B11WPH731) T-1 February', link: '2021/Nanotechnology (18B11WPH731) T-1 February, 2023 (Sem-7) B.Tech..pdf;' },
+          { name: '2021/Service Design and Marketing (20B1WHS631) T-1 February', link: '2021/Service Design and Marketing (20B1WHS631) T-1 February, 2023 (Sem-6) B.Tech..pdf;' },
+          { name: '2021/Soft Computing and Optimization Algorithms (21B1WMA831) T-1 February', link: '2021/Soft Computing and Optimization Algorithms (21B1WMA831) T-1 February, 2023 (Sem-8) B.Tech..pdf;' },
+          { name: '2021/Strategic Management (18B1WHS640) T-1 February', link: '2021/Strategic Management (18B1WHS640) T-1 February, 2023 (Sem-6) B.Tech..pdf;' },
+          { name: '2021/Transportation Engineering (18B1WCE634) T-1 February', link: '2021/Transportation Engineering (18B1WCE634) T-1 February, 2023 (Sem-6) B.Tech..pdf;' },
+          { name: '2021/Water Resource Engineering (18B11CE414) T-1 February', link: '2021/Water Resource Engineering (18B11CE414) T-1 February, 2023 (Sem-4) B.Tech..pdf;' },
+          { name: '2022/and Biofuels (18B1WBT634) T-1 February', link: "2022/and Biofuels (18B1WBT634) T-1 February, 2022 (Sem-6) B. Tech (BT).pdf;" },
+          { name: '2022/Cell Biology and Culture Technologies (18B11BI411) T-1 February', link: '2022/Cell Biology and Culture Technologies (18B11BI411) T-1 February, 2022 (Sem-4) B. Tech (BT).pdf;' },
+          { name: '2022/Discrete Mathematics (18B11MA413) T-1 February', link: '2022/Discrete Mathematics (18B11MA413) T-1 February, 2022 (Sem-4) B. Tech (ECE).pdf;' },
+          { name: '2022/Object Oriented Programming (18B11CI415) T-1 February', link: '2022/Object Oriented Programming (18B11CI415) T-1 February, 2022 (Sem-4) B. Tech. (BI).pdf;' },
+          { name: '2022/Object-Oriented Technologies Using Java (19B1WCI734) T-1 February', link: '2022/Object-Oriented Technologies Using Java (19B1WCI734) T-1 February, 2022 (Sem-6) B. Tech. (ECE).pdf;' },
+          { name: '2022/Service Design and Marketing (20B1WHS631) T-1 February', link: '2022/Service Design and Marketing (20B1WHS631) T-1 February, 2022 (Sem-6) B. Tech.pdf;' },
+          { name: '2022/Software Engineering Practices (19B11CI411) T-1 February', link: '2022/Software Engineering Practices (19B11CI411) T-1 February, 2022 (Sem-4) B. Tech (IT, IT Minor).pdf;' },
+          { name: '2022/Statistics and Exploratory Data Analytics (19B1WCI637) T-1 February', link: '2022/Statistics and Exploratory Data Analytics (19B1WCI637) T-1 February, 2022 (Sem-6) B. Tech (CSE, IT).pdf;' },
+          { name: '2022/Understanding India Literary Reflections (17B1WHS831) T-1 February', link: '2022/Understanding India Literary Reflections (17B1WHS831) T-1 February, 2022 (Sem-6) B. Tech.pdf;' },
+          { name: '2022/VLSI Technology (18B11EC612) T-1 February', link: "2022/VLSI Technology (18B11EC612) T-1 February, 2022 (Sem-6) B. Tech. (ECE).pdf;" },
+          { name: '2022/Water Resource Engineering (18B11CE414) T-1 February', link: '2022/Water Resource Engineering (18B11CE414) T-1 February, 2022 (Sem-4) B. Tech. (Civil).pdf;' },
+          { name: '2022/Water Supply Engineering (18B11CE314) T-1 February', link: '2022/Water Supply Engineering (18B11CE314) T-1 February, 2022 (Sem-8) B. Tech. (Civil).pdf;' },
+          { name: '2022/Wireless and Data Communication (18B11EC611) T-1 February', link: '2022/Wireless and Data Communication (18B11EC611) T-1 February, 2022 (Sem-6) B. Tech. (ECE,CSE,IT).pdf;' }
+      ];
+
+      // Get the HTML element of the list
+      let list = document.getElementById('list');
+      // Add each data item as an <a> tag
+      countries.forEach((country) => {
+        let a = document.createElement("a");
+        a.innerText = country.name;
+        a.href = country.link;
+        a.classList.add("listItem");
+        list.appendChild(a);
+      })
+    }
+
+    function search() {
+      // search functionality goes here
+      let listContainer = document.getElementById('list');
+      let listItems = document.getElementsByClassName('listItem');
+      let input = document.getElementById('searchbar').value
+      input = input.toLowerCase();
+
+      let noResults = true;
+      for (i = 0; i < listItems.length; i++) {
+        if (!listItems[i].innerHTML.toLowerCase().includes(input) || input === "") {
+          listItems[i].style.display = "none";
+          continue;
+        }
+        else {
+          listItems[i].style.display = "flex";
+          noResults = false;
+        }
+      }
+
+      listContainer.style.display = noResults ? "none" : "block";
+    }
+
+  </script>
+    <title>Past Year Papers</title>
+</head>
+<body  onload="loadSearchData()">
+  <nav class="navbar">
+    <!-- LOGO -->
+    <div class="logo"><img src="./logo academic.png" alt="This is a logo"></div><!-- NAVIGATION MENU -->
+    <ul class="nav-links">
+    
+    <!-- USING CHECKBOX HACK -->
+    <input type="checkbox" id="checkbox_toggle" />
+    <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+    
+    <!-- NAVIGATION MENUS -->
+    <div class="menu">
+    
+    <li><a href="about.html" class="item">Home</a></li>
+    <li><a href="past_year.html" class="item active">Past year papers</a></li>
+    <li><a href="tsheets.html" class="item">Tutorial Sheets</a></li>
+    <li class="services">
+      <a href="#">Notes <i class="fa-solid fa-caret-down" style="color: #ffffff;"></i></i></a>
+
+
+      <!-- DROPDOWN MENU -->
+      <ul class="dropdown" id="dropdown">
+        <input type="text" placeholder=" Search.." id="Inputnav" onkeyup="filterFunction()">
+        <li><a href="notes\OS_Ch03.pdf"> Operating System Pdf Notes Ch-3</a></li>
+        <li><a href="notes\OS_Ch04.pdf"> Operating System Pdf Notes Ch-4</a></li>
+        <li><a href="notes\OS_Ch05.pdf"> Operating System Pdf Notes Ch-5</a></li>
+        <li><a href="notes\Practical1.pdf">WebTech Practical 1</a></li>
+        <li><a href="notes\Practical2.pdf">WebTech Practical 2</a></li>
+        <li><a href="notes\Practical3.pdf">WebTech Practical 3</a></li>
+      </ul>
+
+    </li>
+    
+    
+    <li><a href="prefrence_form.html" class="item">Preference Form</a></li>
+    </div>
+    </ul>
+    </nav>
+
+    <div class="search">
+      <h2>Click here to search !!</h2>
+      <div class="search-box">
+        <input id="searchbar" autocomplete="off" onkeyup="search()" type="text" \n name="search" placeholder=" ">
+        <button type="reset"></button>
+      </div>
+    </div>
+    <div id="list">
+  
+    </div>
+    </div>
+    <div class="h2018">Year-2018</div>
+    <div class="papers-2018">   
+        
+      <button onclick="location.href='2018/Advanced Algorithms (10M11CI211) T-2 April, 2018 (Sem-8,2) B.Tech- M.Tech.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Advanced Algorithms (10M11CI211)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2018/Advanced Algorithms for Bioinformatics (10B11BI614) T-2, April, 2018 (Sem-8) B. Tech. BT-BI.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Advanced Algorithms for Bioinformatics (10B11BI614)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2018/Analogue and Digital Communications T-2 April, 2018 (Sem-4) B.Tech.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Analogue and Digital Communications</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2018/Basic Data Structures (14B21CI211) T-2 April, 2018 (Sem-2) B.Tech.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Basic Data Structures (14B21CI211)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2018/Bio-resources and Industrial Product (14B1WBI741) T-2 April, 2018 (Sem-8) B. Tech. & M. tech..pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Bio-resources and Industrial Product (14B1WBI741)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2018/Biophysical Techniques (10B11PH212) T-2 April, 2018 (Sem-4) B.Tech.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Biophysical Techniques (10B11PH212) </p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2018/Chemistry (10B11CL211)  T-2 April, 2018 (Sem-2) B.Tech.pdf';" type="image"><div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Chemistry (10B11CL211)</p>
+          </div>
+        </div>
+      </div>></button>
+      <button onclick="location.href='2018/Concrete Technology (11B11CE411) T-2 April, 2018 (Sem-4) B.Tech.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Concrete Technology (11B11CE411)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2018/Construction Financial Management (10M11CE214) T-2 April, 2018 (Sem-4) M.Tech.pdf';" type="image"><div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Construction Financial Management (10M11CE214)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2018/Data Mining (10B22CI622) T-2 April, 2018 (Sem-6) B.Tech.pdf';" type="image"><div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+           
+            <p>Data Mining (10B22CI622)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2018/Discrete Mathematics (10B11MA211) T-2 April, 2018 (Sem-2) B.Tech.pdf';" type="image"><div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+           
+            <p>Discrete Mathematics (10B11MA211) </p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2018/ECE,CSE,IT (10B11EC211) T-2 April, 2018 (Sem-2) B.Tech.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+           
+            <p>ECE,CSE,IT (10B11EC211)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2018/Financial Management (10B11PD411) T-2 April, 2018 (Sem-4) B.Tech.pdf';" type="image"><div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Financial Management (10B11PD411)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2018/Fundamentals of MIMO Systems (12M1WEC432) T-2 April, 2018 (Sem-4) M.Tech.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Fundamentals of MIMO Systems (12M1WEC432)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2018/Linear Programming and Applications (11B1WMA832) T-2 April, 2018 (Sem-8) B.Tech.pdf';" type="image"><div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Linear Programming and Applications (11B1WMA832)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2018/Mobile and Distributed Computing (17B1WCI811) T-2 April, 2018 (Sem-8) B.Tech.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Mobile and Distributed Computing (17B1WCI811)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2018/Physics-II (10B11PH211) T-2 April, 2018 (Sem-2) B.Tech.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Physics-II (10B11PH211)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2018/Probability Theory and Randon Processes (10B11MA411) T-2 April, 2018 (Sem-4) B.Tech .pdf';" type="image"><div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Probability Theory and Randon Processes (10B11MA411)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2018/Strategic Management (11B1WPD832) T-2 April, 2018 (Sem-8) B.Tech.pdf';" type="image"><div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Strategic Management (11B1WPD832)</p>
+          </div>
+        </div>
+      </div></button>
+
+
+    </div>
+    <div class="h2019">Year-2019</div>
+    <div class="papers-2018">   
+        
+      <button onclick="location.href='2019/Advanced Algorithms for Bioinformatics (10B11BI614) T-2 April, 2019 (Sem-6) B. Tech.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+           
+            <p>Advanced Algorithms for Bioinformatics (10B11BI614)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2019/Advanced Software Engineering (10M11CI213) T-2 April, 2019 (B. Tech-Sem-8) (M. Tech-Sem-2).pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Advanced Software Engineering (10M11CI213)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2019/Advanced Web Mining (11M1WCI431) T-2 April, 2019 (Sem-4) M. Tech.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Advanced Web Mining (11M1WCI431)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2019/Basic Electrical Science (18B11EC212) T-2 April, 2019 (Sem-2) B. Tech(BT-BI).pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+           
+            <p>Basic Electrical Science (18B11EC212)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2019/Basic Electronics (15B11EC411) T-2 April, 2019 (Sem-4) B. Tech BT.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Basic Electronics (15B11EC411)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2019/Bridge Engineering (11M1WCE133) T-2 April, 2019 (Sem-8) M. Tech & B. Tech.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Bridge Engineering (11M1WCE133)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2019/Computational Molecular Evolution (15B1WBI834) T-2 April, 2019 (Sem-8) B. Tech.pdf';" type="image"><div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Computational Molecular Evolution (15B1WBI834)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2019/Computer Organization (10B22CI421) T-2 April, 2019 (Sem-4) B. Tech.pdf';" type="image"><div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Computer Organization (10B22CI421)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2019/Concrete Technology (11B11CE411) T-2 April, 2019 (Sem-4) B. Tech.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+           
+            <p>Concrete Technology (11B11CE411)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2019/Data Mining (10B22CI622) T-2 April, 2019 (Sem-6) B. Tech, IT.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+           
+            <p>Data Mining (10B22CI622) </p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2019/Deep Learning (18B1WCI831) T-2 April, 2019 (Sem-8) B. Tech CSE, IT.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Deep Learning (18B1WCI831)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2019/Financial Management (10B11PD411) T-2 April, 2019 (Sem-4) B. Tech All Branches.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Financial Management (10B11PD411)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2019/Industrial Sociology (13B1WHS833) T-2 April, 2019 (Sem-8) B. Tech All Branches.pdf';" type="image"><div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Industrial Sociology (13B1WHS833)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2019/Linear Programming and Applications (11B1WMA832) T-2 April, 2019 (Sem-8) B. Tech All Branches.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Linear Programming and Applications (11B1WMA832)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2019/Material Characterization (13P1WPH112) T-2 April, 2019  Ph.D.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Material Characterization (13P1WPH112)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2019/Material Science (10B11PH611) T-2 April, 2019 (Sem-6) B. Tech (CSE, ECE, IT).pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Material Science (10B11PH611)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2019/Optical Fiber Networks (10B1WPH732) T-2 April, 2019 B. Tech.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Optical Fiber Networks (10B1WPH732)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2019/Probability Theory and Random Process (10B11MA411) T-2 April, 2019 (Sem-4) B. Tech (ECE-CSE-IT).pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Probability Theory and Random Process (10B11MA411)</p>
+          </div>
+        </div>
+      </div></button>
+
+    </div>
+    <div class="h2020">Year-2020</div>
+    <div class="papers-2018">   
+        
+      <button onclick="location.href='2020/Advance Computational Techniques (15M1WCI432) T-1 February, 2020 (Sem-2) B.Tech.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+           
+            <p>Advance Computational Techniques (15M1WCI432)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2020/Advanced Algorithms (10M11CI211) T-1 February, 2020 (Sem-2) M.Tech.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Advanced Algorithms (10M11CI211)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2020/Advanced Algorithms (10M11CI211) T-1 February, 2020 (Sem-6-8) B.Tech.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Advanced Algorithms (10M11CI211) </p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2020/Analog Integrated Circuits (18B11EC411) T-1 February, 2020 (Sem-4) B.Tech.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Analog Integrated Circuits (18B11EC411)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2020/Analogue and Digital Communication (17B11EC412) T-1 February, 2020 (Sem-4) B.Tech.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Analogue and Digital Communication (17B11EC412)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2020/Applied Artificial Intelligence (18B1WEC533) T-1 February, 2020 (Sem-6) B.Tech.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Applied Artificial Intelligence (18B1WEC533)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2020/Contemporary India in Globalized Era (18B1WHS831) T-1 February, 2020 (Sem-8) B.Tech.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Contemporary India in Globalized Era (18B1WHS831)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2020/Data Mining (10B22CI622) T-1 February, 2020 (Sem-6) B.Tech IT.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Data Mining (10B22CI622)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2020/Engineering Physics II (18B11PH211) T-1 February, 2020 (Sem-2) B.Tech.pdf';" type="image"><div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Engineering Physics II (18B11PH211)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2020/Financial and Accounting (18B11HS411) T-1 February, 2020 (Sem-4) B.Tech (All Branches).pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Financial and Accounting (18B11HS411)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2020/Financial Management (11B11PD411) T-1 February, 2020 (Sem-4) B.Tech (All Branches).pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Financial Management (11B11PD411)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2020/Machine Learning (18B1WCI634) T-1 February, 2020 (Sem-6) B.Tech (CSE-IT).pdf';" type="image"><div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+           
+            <p>Machine Learning (18B1WCI634)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2020/Materials Science (10B11PH611) T-1 February, 2020 (Sem-6) B.Tech.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+           
+            <p>Materials Science (10B11PH611)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2020/Mathematics-I (10B11MA111) T-1 February, 2020 (Sem-1) B.Tech (backlog).pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Mathematics-I (10B11MA111)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2020/Nano-Biotechnology (L-11B1WBT840) T-1 February, 2020 (Sem-8) B.Tech.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Nano-Biotechnology (L-11B1WBT840)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2020/Plant Biotechnology (14I1WBT531) T-1 February, 2020 (Sem-8) B.Tech.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Plant Biotechnology (14I1WBT531) </p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2020/Probability Theory and Random Processes (10B11MA411) T-1 Feb, 2020 (Sem-4)  B.Tech (ECE-CSE_IT).pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Probability Theory and Random Processes (10B11MA411)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2020/Quality Analysis and Management (14MIWBT334) T-1 February, 2020 (Sem-2) Ph.D..pdf';" type="image"><div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+           
+            <p>Quality Analysis and Management (14MIWBT334) </p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2020/Water Resource Engineering (18B11CE414) T-1 February, 2020 (Sem-4) B.Tech.pdf';" type="image"><div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Water Resource Engineering (18B11CE414)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2020/Water Supply Engineering (10B11CE514) T-1 February, 2020 (Sem-5) B.Tech.pdf';" type="image"><div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Water Supply Engineering (10B11CE514)</p>
+          </div>
+        </div>
+      </div></button>
+
+    </div>
+    <div class="h2021">Year-2021</div>
+    <div class="papers-2021">   
+        
+      <button onclick="location.href='2021/Analog Integrated Circuits (18B11EC411) T-1 February, 2023 (Sem-4) B.Tech..pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Analog Integrated Circuits (18B11EC411) </p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2021/Applied Medical Signal Processing (19B1WEC836) T-1 February, 2023 (Sem-8) B.Tech..pdf';" type="image"><div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Applied Medical Signal Processing (19B1WEC836) </p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2021/Biosensors (21B1WPH831) T-1 February, 2023 (Sem-8) B.Tech..pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Biosensors (21B1WPH831)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2021/Data Analytics (18B1WCI843) T-1 February, 2023 (Sem-8) B.Tech..pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+           
+            <p>Data Analytics (18B1WCI843) </p>
+          </div>
+        </div>
+      </div></button>
+      <!-- <button onclick="location.href='" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Data Mining (18B11CI613)</p>
+          </div>
+        </div>
+      </div></button> -->
+      <button onclick="location.href='2021/Data Mining and Data Warehousing (18B1WCI635) T-1 February, 2023 (Sem-6) B.Tech..pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Data Mining and Data Warehousing (18B1WCI635)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2021/Discrete Mathematics (18B11MA413) T-1 February, 2023 (Sem-4) B.Tech..pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Discrete Mathematics (18B11MA413)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2021/Molecular Biology (18B11BT412) T-1 February, 2023 (Sem-4).pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+           
+            <p>Molecular Biology (18B11BT412) </p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2021/Nano Biotechnology (18B1WBT633) T-1 February, 2023 (Sem-6).pdf';" type="image"><div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Nano Biotechnology (18B1WBT633)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2021/Nanotechnology (18B11WPH731) T-1 February, 2023 (Sem-7) B.Tech..pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+           
+            <p>Nanotechnology (18B11WPH731)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2021/Service Design and Marketing (20B1WHS631) T-1 February, 2023 (Sem-6) B.Tech..pdf';" type="image"><div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+           
+            <p>Service Design and Marketing (20B1WHS631)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2021/Soft Computing and Optimization Algorithms (21B1WMA831) T-1 February, 2023 (Sem-8) B.Tech..pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+           
+            <p>Soft Computing and Optimization Algorithms (21B1WMA831)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2021/Strategic Management (18B1WHS640) T-1 February, 2023 (Sem-6) B.Tech..pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+         
+            <p>Strategic Management (18B1WHS640)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2021/Transportation Engineering (18B1WCE634) T-1 February, 2023 (Sem-6) B.Tech..pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Transportation Engineering (18B1WCE634) </p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2021/Water Resource Engineering (18B11CE414) T-1 February, 2023 (Sem-4) B.Tech..pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>/Water Resource Engineering (18B11CE414)</p>
+          </div>
+        </div>
+      </div></button>
+      
+
+    </div>
+    <div class="h2022">Year-2022</div>
+    <div class="papers-2022">   
+        
+      <button onclick="location.href='2022/and Biofuels (18B1WBT634) T-1 February, 2022 (Sem-6) B. Tech (BT).pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>and Biofuels (18B1WBT634)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2022/Cell Biology and Culture Technologies (18B11BI411) T-1 February, 2022 (Sem-4) B. Tech (BT).pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Cell Biology and Culture Technologies (18B11BI411)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2022/Discrete Mathematics (18B11MA413) T-1 February, 2022 (Sem-4) B. Tech (ECE).pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+           
+            <p>Discrete Mathematics (18B11MA413) </p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2022/Object Oriented Programming (18B11CI415) T-1 February, 2022 (Sem-4) B. Tech. (BI).pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+           
+            <p>Object Oriented Programming (18B11CI415) </p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2022/Object-Oriented Technologies Using Java (19B1WCI734) T-1 February, 2022 (Sem-6) B. Tech. (ECE).pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p></p>Object-Oriented Technologies Using Java (19B1WCI734)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2022/Service Design and Marketing (20B1WHS631) T-1 February, 2022 (Sem-6) B. Tech.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+           
+            <p>Service Design and Marketing (20B1WHS631)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2022/Software Engineering Practices (19B11CI411) T-1 February, 2022 (Sem-4) B. Tech (IT, IT Minor).pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Software Engineering Practices (19B11CI411) </p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2022/Statistics and Exploratory Data Analytics (19B1WCI637) T-1 February, 2022 (Sem-6) B. Tech (CSE, IT).pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+           
+            <p>Statistics and Exploratory Data Analytics (19B1WCI637)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2022/Understanding India Literary Reflections (17B1WHS831) T-1 February, 2022 (Sem-6) B. Tech.pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Understanding India Literary Reflections (17B1WHS831)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2022/VLSI Technology (18B11EC612) T-1 February, 2022 (Sem-6) B. Tech. (ECE).pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+           
+            <p>VLSI Technology (18B11EC612) </p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2022/Water Resource Engineering (18B11CE414) T-1 February, 2022 (Sem-4) B. Tech. (Civil).pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+           
+            <p>Water Resource Engineering (18B11CE414)</p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2022/Water Supply Engineering (18B11CE314) T-1 February, 2022 (Sem-8) B. Tech. (Civil).pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Water Supply Engineering (18B11CE314) </p>
+          </div>
+        </div>
+      </div></button>
+      <button onclick="location.href='2022/Wireless and Data Communication (18B11EC611) T-1 February, 2022 (Sem-6) B. Tech. (ECE,CSE,IT).pdf';" type="image"> <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="Group 2.png" alt="" >
+          </div>
+          <div class="flip-box-back">
+            
+            <p>Wireless and Data Communication (18B11EC611)</p>
+          </div>
+        </div>
+      </div></button>
+      
+
+    </div>
+    <div class="pg-footer">
+      <footer class="footer">
+        <svg class="footer-wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
+          <path class="footer-wave-path" d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"></path>
+        </svg>
+        <div class="footer-content">
+          <div class="footer-content-column">
+            <div class="footer-logo">
+              <a class="footer-logo-link" href="#">
+                <span class="hidden-link-text">LOGO</span>
+                <h1>ACADEMIC ZONE</h1>
+              </a>
+            </div>
+            <div class="footer-menu">
+              <!-- <h2 class="footer-menu-name"> Get Started</h2> -->
+              <!-- <ul id="menu-get-started" class="footer-menu-list">
+                <li class="menu-item menu-item-type-post_type menu-item-object-product">
+                  <a href="#">Start</a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-product">
+                  <a href="#">Documentation</a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-product">
+                  <a href="#">Installation</a>
+                </li>
+              </ul> -->
+            </div>
+          </div>
+          <div class="footer-content-column">
+            <div class="footer-menu">
+              <h2 class="footer-menu-name">Jaypee University of Information and Technology</h2>
+              <ul id="menu-company" class="footer-menu-list">
+                <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                  <a href="#">Notes</a>
+                </li>
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                  <a href="#">Tutorial Sheets</a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                  <a href="#">Past Year Papers</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-menu">
+              <h2 class="footer-menu-name"> Legal</h2>
+              <ul id="menu-legal" class="footer-menu-list">
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-170434">
+                  <a href="#">Privacy Notice</a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                  <a href="#">Terms of Use</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-content-column">
+            <div class="footer-menu">
+              <h2 class="footer-menu-name">Departments </h2>
+              <ul id="menu-quick-links" class="footer-menu-list">
+                <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                  <a target="_blank" rel="noopener noreferrer" href="#">Computer Science</a>
+                </li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                  <a target="_blank" rel="noopener noreferrer" href="#">Electrical Communication Engineering</a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                  <a href="#">Information Technology</a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                  <a href="#">Humanities ans social studies</a>
+                </li>
+                <li class="menu-item menu-item-type-post_type_archive menu-item-object-customer">
+                  <a href="#">Physics Department</a></li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                  <a href="#">Mathematics Department</a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                  <a href="#">Civil Engineering Department</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-content-column">
+            <div class="footer-call-to-action">
+              <h2 class="footer-call-to-action-title"> Let's Chat</h2>
+              <p class="footer-call-to-action-description"> Have a support question?</p>
+              <a class="footer-call-to-action-button button" href="prefrence_form.html" target="_self"> Get in Touch </a>
+            </div>
+            <div class="footer-call-to-action">
+              <h2 class="footer-call-to-action-title"> You Call Us</h2>
+              <p class="footer-call-to-action-link-wrapper"> <a class="footer-call-to-action-link" href="tel:0124-64XXXX" target="_self"> 0124-649056</a></p>
+            </div>
+          </div>
+          <div class="footer-social-links"> <svg class="footer-social-amoeba-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 236 54">
+              <path class="footer-social-amoeba-path" d="M223.06,43.32c-.77-7.2,1.87-28.47-20-32.53C187.78,8,180.41,18,178.32,20.7s-5.63,10.1-4.07,16.7-.13,15.23-4.06,15.91-8.75-2.9-6.89-7S167.41,36,167.15,33a18.93,18.93,0,0,0-2.64-8.53c-3.44-5.5-8-11.19-19.12-11.19a21.64,21.64,0,0,0-18.31,9.18c-2.08,2.7-5.66,9.6-4.07,16.69s.64,14.32-6.11,13.9S108.35,46.5,112,36.54s-1.89-21.24-4-23.94S96.34,0,85.23,0,57.46,8.84,56.49,24.56s6.92,20.79,7,24.59c.07,2.75-6.43,4.16-12.92,2.38s-4-10.75-3.46-12.38c1.85-6.6-2-14-4.08-16.69a21.62,21.62,0,0,0-18.3-9.18C13.62,13.28,9.06,19,5.62,24.47A18.81,18.81,0,0,0,3,33a21.85,21.85,0,0,0,1.58,9.08,16.58,16.58,0,0,1,1.06,5A6.75,6.75,0,0,1,0,54H236C235.47,54,223.83,50.52,223.06,43.32Z"></path>
+            </svg>
+            <a class="footer-social-link linkedin" href="https://www.linkedin.com/feed/" target="_blank">
+              <span class="hidden-link-text">Linkedin</span>
+              <svg class="footer-social-icon-svg" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 30 30">
+                <path class="footer-social-icon-path" d="M9,25H4V10h5V25z M6.501,8C5.118,8,4,6.879,4,5.499S5.12,3,6.501,3C7.879,3,9,4.121,9,5.499C9,6.879,7.879,8,6.501,8z M27,25h-4.807v-7.3c0-1.741-0.033-3.98-2.499-3.98c-2.503,0-2.888,1.896-2.888,3.854V25H12V9.989h4.614v2.051h0.065 c0.642-1.18,2.211-2.424,4.551-2.424c4.87,0,5.77,3.109,5.77,7.151C27,16.767,27,25,27,25z"></path>
+              </svg>
+            </a>
+            <a class="footer-social-link twitter" href="https://twitter.com/home" target="_blank">
+              <span class="hidden-link-text">Twitter</span>
+              <svg class="footer-social-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26">
+                <path class="footer-social-icon-path" d="M 25.855469 5.574219 C 24.914063 5.992188 23.902344 6.273438 22.839844 6.402344 C 23.921875 5.75 24.757813 4.722656 25.148438 3.496094 C 24.132813 4.097656 23.007813 4.535156 21.8125 4.769531 C 20.855469 3.75 19.492188 3.113281 17.980469 3.113281 C 15.082031 3.113281 12.730469 5.464844 12.730469 8.363281 C 12.730469 8.773438 12.777344 9.175781 12.867188 9.558594 C 8.503906 9.339844 4.636719 7.246094 2.046875 4.070313 C 1.59375 4.847656 1.335938 5.75 1.335938 6.714844 C 1.335938 8.535156 2.261719 10.140625 3.671875 11.082031 C 2.808594 11.054688 2 10.820313 1.292969 10.425781 C 1.292969 10.449219 1.292969 10.46875 1.292969 10.492188 C 1.292969 13.035156 3.101563 15.15625 5.503906 15.640625 C 5.0625 15.761719 4.601563 15.824219 4.121094 15.824219 C 3.78125 15.824219 3.453125 15.792969 3.132813 15.730469 C 3.800781 17.8125 5.738281 19.335938 8.035156 19.375 C 6.242188 20.785156 3.976563 21.621094 1.515625 21.621094 C 1.089844 21.621094 0.675781 21.597656 0.265625 21.550781 C 2.585938 23.039063 5.347656 23.90625 8.3125 23.90625 C 17.96875 23.90625 23.25 15.90625 23.25 8.972656 C 23.25 8.742188 23.246094 8.515625 23.234375 8.289063 C 24.261719 7.554688 25.152344 6.628906 25.855469 5.574219 "></path>
+              </svg>
+            </a>
+            <a class="footer-social-link youtube" href="https://www.youtube.com/" target="_blank">
+              <span class="hidden-link-text">Youtube</span>
+              <svg class="footer-social-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                <path class="footer-social-icon-path" d="M 15 4 C 10.814 4 5.3808594 5.0488281 5.3808594 5.0488281 L 5.3671875 5.0644531 C 3.4606632 5.3693645 2 7.0076245 2 9 L 2 15 L 2 15.001953 L 2 21 L 2 21.001953 A 4 4 0 0 0 5.3769531 24.945312 L 5.3808594 24.951172 C 5.3808594 24.951172 10.814 26.001953 15 26.001953 C 19.186 26.001953 24.619141 24.951172 24.619141 24.951172 L 24.621094 24.949219 A 4 4 0 0 0 28 21.001953 L 28 21 L 28 15.001953 L 28 15 L 28 9 A 4 4 0 0 0 24.623047 5.0546875 L 24.619141 5.0488281 C 24.619141 5.0488281 19.186 4 15 4 z M 12 10.398438 L 20 15 L 12 19.601562 L 12 10.398438 z"></path>
+              </svg>
+            </a>
+            <a class="footer-social-link github" href="https://github.com/" target="_blank">
+              <span class="hidden-link-text">Github</span>
+              <svg class="footer-social-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                <path class="footer-social-icon-path" d="M 16 4 C 9.371094 4 4 9.371094 4 16 C 4 21.300781 7.4375 25.800781 12.207031 27.386719 C 12.808594 27.496094 13.027344 27.128906 13.027344 26.808594 C 13.027344 26.523438 13.015625 25.769531 13.011719 24.769531 C 9.671875 25.492188 8.96875 23.160156 8.96875 23.160156 C 8.421875 21.773438 7.636719 21.402344 7.636719 21.402344 C 6.546875 20.660156 7.71875 20.675781 7.71875 20.675781 C 8.921875 20.761719 9.554688 21.910156 9.554688 21.910156 C 10.625 23.746094 12.363281 23.214844 13.046875 22.910156 C 13.15625 22.132813 13.46875 21.605469 13.808594 21.304688 C 11.144531 21.003906 8.34375 19.972656 8.34375 15.375 C 8.34375 14.0625 8.8125 12.992188 9.578125 12.152344 C 9.457031 11.851563 9.042969 10.628906 9.695313 8.976563 C 9.695313 8.976563 10.703125 8.65625 12.996094 10.207031 C 13.953125 9.941406 14.980469 9.808594 16 9.804688 C 17.019531 9.808594 18.046875 9.941406 19.003906 10.207031 C 21.296875 8.65625 22.300781 8.976563 22.300781 8.976563 C 22.957031 10.628906 22.546875 11.851563 22.421875 12.152344 C 23.191406 12.992188 23.652344 14.0625 23.652344 15.375 C 23.652344 19.984375 20.847656 20.996094 18.175781 21.296875 C 18.605469 21.664063 18.988281 22.398438 18.988281 23.515625 C 18.988281 25.121094 18.976563 26.414063 18.976563 26.808594 C 18.976563 27.128906 19.191406 27.503906 19.800781 27.386719 C 24.566406 25.796875 28 21.300781 28 16 C 28 9.371094 22.628906 4 16 4 Z "></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="footer-copyright-wrapper">
+            <p class="footer-copyright-text">
+              <a class="footer-copyright-link" href="#" target="_self"> ©2020. | Designed By: Prachi Varshney and Isha. | All rights reserved. </a>
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+</body>
+</html>

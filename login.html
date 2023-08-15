@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Login</title>
+    
+   
+</head>
+<body>
+ 
+  
+    <div class="split left">
+        <div class="centered">
+          <img src="logo.png" alt="Avatar woman">  
+        </div>
+      </div>
+      
+      <div class="split right">
+        <div class="centered">
+          <div class="log_in">Login</div>
+          <div class="container">
+            <form id="login-form">
+            
+            <input type="email" placeholder="Enter your Email Address" name="username" id="username" required/>
+        
+            <input type="password" placeholder="Enter your Password"  name="password" id="password" required/>
+               
+            <div class="fp">Forget Password?</div>
+            <button type="submit">Login</button>
+          </form>
+          
+          
+          </div>
+         </div>
+         <script>
+          const allowedUsers = ['211293@juitsolan.in', '211288@juitsolan.in', '211236@juitsolan.in', '21152@juitsolan.in'];
+          const allowedPasswords = ['password1', 'password2', 'password3'];
+          
+          const loginForm = document.getElementById('login-form');
+          const usernameInput = document.getElementById('username');
+          const passwordInput = document.getElementById('password');
+          const errorMessage = document.createElement('p');
+          errorMessage.innerText = 'Invalid username or password.';
+          errorMessage.style.color = 'red';
+          
+          loginForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const username = usernameInput.value;
+            const password = passwordInput.value;
+            
+            if (allowedUsers.includes(username) && allowedPasswords.includes(password)) {
+              // login successful, redirect to protected page
+              window.location.href = 'about.html';
+            } else {
+              // login failed, display error message
+              loginForm.appendChild(errorMessage);
+            }
+          });
+          
+    
+         </script>
+        </div>
+        <ul class="bg-bubbles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+
+      </div>
+      <script>
+        $(window).on("load",function(){
+          $(".square").fadeOut("slow");
+        });
+      </script>
+</body>
+</html>
